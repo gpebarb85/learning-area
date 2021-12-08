@@ -19,6 +19,54 @@
     const input = document.querySelector('.numberInput');
     const para = document.querySelector('p');
 
+    function squared(num) {
+      return num * num;
+    }
+
+    function cubed(num) {
+      return num * num * num;
+    }
+
+    function factorial(num) {
+      if (num < 0) return undefined;
+      if (num == 0) return 1;
+      let x = num - 1;
+      while (x > 1) {
+        num *= x;
+        x--;
+      }
+      return num;
+    }
+
+    function squareRoot(num) {
+      let x = Math.sqrt(num);
+      return x.toFixed(2);
+    }
+
+    function cubeRoot(num) {
+      let x = Math.cbrt(num);
+      return x.toFixed(2);
+    }
+
+    function circumferenceRadius(num) {
+      let x = 2 * Math.PI * num;
+      return x.toFixed(2);
+    }
+
+    input.onchange = function() {
+      const num = parseFloat(input.value);
+      if (isNaN(num)) {
+        para.textContent = 'You need to enter a number!';
+      } else {
+        para.textContent = `${num} sqaured is ${squared(num)}. \
+          ${num} cubed is ${cubed(num)}. \
+          ${num} factorial is ${factorial(num)}. \
+          Square root of ${num} is ${squareRoot(num)}. \
+          Cube root of ${num} is ${cubeRoot(num)}. \
+          With radius ${num}, the circumference of a circle will be ${circumferenceRadius(num)}.`; 
+      };
+    };
+
   </script>
 </body>
 </html>

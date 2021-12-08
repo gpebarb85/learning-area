@@ -31,7 +31,36 @@
     </ul>
 
     <script>
+      let unorderedList = document.querySelector('ul');
+      let input = document.querySelector('input');
+      const button = document.querySelector('button');
 
+      button.onclick = function() {
+        let myItem = input.value;
+        input.value = '';
+
+        const listItem = document.createElement('li');
+        const itemName = document.createElement('span');
+        const deleteButton = document.createElement('button');
+
+        listItem.appendChild(itemName);
+        listItem.appendChild(deleteButton);
+
+        itemName.textContent = myItem;
+        deleteButton.textContent = 'Delete';
+
+        unorderedList.appendChild(listItem);
+
+        deleteButton.onclick = function(e) {
+        unorderedList.removeChild(listItem);
+        };
+
+        input.focus();
+      };
+
+     
+
+      
     </script>
   </body>
 </html>
