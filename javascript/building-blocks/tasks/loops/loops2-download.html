@@ -43,6 +43,16 @@
 
     // Add your code here
 
+    function findContact(name) {
+      phonebook.forEach(contact => {
+        contact = Object.values(contact);
+        if (name === contact[0]) {
+          para.textContent = `${contact[0]}: ${contact[1]}`;
+        };
+      });
+    }
+
+    console.log(findContact(name));
     // Don't edit the code below here!
     let section = document.querySelector('section');
     section.appendChild(para);
