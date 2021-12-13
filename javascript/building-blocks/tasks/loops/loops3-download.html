@@ -41,8 +41,17 @@
 
 
     // Add your code here
+    
+    const numArray = [...Array(i).keys()];
+    
 
-
+    numArray.forEach(num => {
+      if (num === numArray.length -1) {
+        para.textContent += `${num}`;
+      } else if ((num > 2) && isPrime(num)) {
+        para.textContent += `${num}, `;
+      };
+    })
     // Don't edit the code below here!
     let section = document.querySelector('section');
     section.appendChild(para);
